@@ -1,1 +1,3 @@
-bin/*
+graphs/Properties/*
+graphs/bin/*
+graphs/obj/*
