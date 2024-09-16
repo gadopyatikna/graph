@@ -16,7 +16,7 @@ namespace graphs
             p.AddConnection(4, 2, 1);
 
             p.Solve();
-
+            p.PrintPath(2);
             return p;
         }
     }
@@ -26,6 +26,7 @@ namespace graphs
         Dictionary<int, List<(int vertex, int cost)>> connections;
 
         Dictionary<int, int> distances;
+        Dictionary<int, int> paths;
         Queue<int> toVisit;
 
         int numVertices;
@@ -36,12 +37,14 @@ namespace graphs
             connections = new Dictionary<int, List<(int vertex, int cost)>>();
             distances = new Dictionary<int, int>();
             toVisit = new Queue<int>();
+            paths = new Dictionary<int, int>();
             toVisit.Enqueue(1);
 
             for (int i = 1; i <= numVertices; i++)
             {
                 connections[i] = new List<(int, int)>();
                 distances[i] = int.MaxValue;
+                paths[i] = -1;
             }
 
             distances[1] = 0;
@@ -67,9 +70,22 @@ namespace graphs
                     if (distances[chV.vertex] > d)
                     {
                         distances[chV.vertex] = d;
+                        // dijkstra path tracking
+                        paths[chV.vertex] = v;
                         toVisit.Enqueue(chV.vertex);
                     }
                 }
+            }
+        }
+
+        public void PrintPath(int v)
+        {
+            var curV = v;
+            while (paths[curV] != -1)
+            {
+                var prevV = paths[curV];
+                Console.Out.WriteLine(prevV);
+                curV = prevV;
             }
         }
     }
