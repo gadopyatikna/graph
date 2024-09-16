@@ -1,0 +1,6 @@
+/Users/dunno/Projects/graphs/graphs/obj/Debug/graphs.csproj.AssemblyReference.cache
+/Users/dunno/Projects/graphs/graphs/obj/Debug/graphs.csproj.CoreCompileInputs.cache
+/Users/dunno/Projects/graphs/graphs/bin/Debug/graphs.exe
+/Users/dunno/Projects/graphs/graphs/bin/Debug/graphs.pdb
+/Users/dunno/Projects/graphs/graphs/obj/Debug/graphs.exe
+/Users/dunno/Projects/graphs/graphs/obj/Debug/graphs.pdb
