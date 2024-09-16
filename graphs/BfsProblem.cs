@@ -25,7 +25,6 @@ namespace graphs
     {
         Dictionary<int, List<(int vertex, int cost)>> connections;
 
-        Dictionary<int, bool> isVisited;
         Dictionary<int, int> distances;
         Queue<int> toVisit;
 
@@ -35,7 +34,6 @@ namespace graphs
         {
             numVertices = nVertices;
             connections = new Dictionary<int, List<(int vertex, int cost)>>();
-            isVisited = new Dictionary<int, bool>();
             distances = new Dictionary<int, int>();
             toVisit = new Queue<int>();
             toVisit.Enqueue(1);
@@ -43,9 +41,6 @@ namespace graphs
             for (int i = 1; i <= numVertices; i++)
             {
                 connections[i] = new List<(int, int)>();
-                //connections[i].Add((i, 0)); // ?
-
-                isVisited[i] = false;
                 distances[i] = int.MaxValue;
             }
 
@@ -65,16 +60,8 @@ namespace graphs
             while (toVisit.Count != 0)
             {
                 var v = toVisit.Dequeue();
-                //if (isVisited[v] == true)
-                //    continue;
-
-                //isVisited[v] = true;
                 foreach (var chV in connections[v])
-                {
-                    //if (isVisited[chV.vertex] == true)
-                    //    continue;
-
-                    //isVisited[chV.vertex] = true;
+                { 
 
                     var d = chV.cost + distances[v];
                     if (distances[chV.vertex] > d)
