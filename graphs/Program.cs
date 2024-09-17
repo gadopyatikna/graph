@@ -7,7 +7,7 @@ namespace graphs
     {
         public static void Main(string[] args)
         {
-            BfsProblemFactory.Create();
+            RealEstateProblemfactory.Create();
 
         }
 

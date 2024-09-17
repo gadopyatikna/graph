@@ -110,6 +110,7 @@ namespace graphs
                     {
                         if (isVisited[city])
                             continue;
+
                         isVisited[city] = true;
                         q.Enqueue(connections[city]);
                     }

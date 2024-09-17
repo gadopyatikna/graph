@@ -34,6 +34,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CityLibraryProblem.cs" />
     <Compile Include="BfsProblem.cs" />
+    <Compile Include="RealEstateProblem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
